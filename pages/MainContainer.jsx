@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from './styles/styles.module.scss'
+import HeaderNav from './HeaderNav'
 
 export default function MainContainer({ children, keywords, titels }) {
   return (
@@ -10,7 +11,7 @@ export default function MainContainer({ children, keywords, titels }) {
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
       </Head>
       <div className={styles.headerBlock}>
-        {/* <HeaderNav /> */}
+        <HeaderNav />
       </div>
       <div>{children}</div>
     </>

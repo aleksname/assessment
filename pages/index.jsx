@@ -6,8 +6,10 @@ import icon3 from '../public/calculator2.png';
 import icon4 from '../public/blackboard.png';
 import TopicItem from '../pages/TopicItem';
 import MainContainer from './MainContainer';
+import Diagrama from './Diagrama';
 
-const students = ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'];
+const students = ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'  ];
+const maxStarsPerStudent = 20; // Define the maximum stars a student can collect
 
 export default function Main() {
   const [totalStars, setTotalStars] = useState(0);
@@ -31,6 +33,11 @@ export default function Main() {
     setStudentStars(individualStars);
   };
 
+  const studentPercentages = students.reduce((acc, student) => {
+    const percentage = (studentStars[student] / maxStarsPerStudent) * 100;
+    return { ...acc, [student]: percentage };
+  }, {});
+
   return (
     <MainContainer titels={"Progress page"}>
       <div className={styles.wrapper}>
@@ -45,21 +52,25 @@ export default function Main() {
           <div className={styles.startAsideBlock}>
           </div>
         </div>
+
         <div className={styles.rationBlock}>
           <button onClick={handleCalculateStars} className={styles.calculateButton}>
             Обрахувати зірочки
           </button>
           <div className={styles.totalStars}>
             Загальна кількість зірочок: {totalStars}
+            <Diagrama data={studentPercentages} className/>
           </div>
-          <div className={styles.studentStars}>
-            {students.map(student => (
-              <div key={student}>
-                {student}: {studentStars[student]}
-              </div>
+          {/*<div className={styles.studentStars}>
+              {students.map(student => (
+                <div key={student}>
+                  {student}: {studentStars[student]}
+                </div>
+              ))}
+          </div>
             ))}
-          </div>
-        </div>
+          </div> */}
+        </div>  
       </div>
     </MainContainer>
   );

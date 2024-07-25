@@ -3,9 +3,39 @@
   @apply text-black px-5 pt-2;
   margin: 0 auto;
   background-image: url('../../public/BackgrounMainPage.png');
-  background-size: 100%;
+  background-size: 115%;
   background-repeat: no-repeat
 }
+// ---- header----
+
+.headerBlock {
+ .headerBlock {
+  max-width: 1280px;
+  @apply items-center mx-auto flex justify-between p-6 text-xl drop-shadow-xl shadow-xl
+} 
+}
+.header{
+  @apply flex items-center  
+}
+.headerTitle{
+  margin-right: 5px;
+}
+.headerLogoImg{
+  width: 30px;
+  height: 28px;
+}
+
+.headerUl {
+  @apply flex 
+}
+.headerLink{
+  @apply mr-20;
+  text-decoration: none;
+}
+.headerUl li:last-child .headerLink{
+  @apply mr-0
+}
+// ----start screen-------
 
 .startScreen {
   @apply text-black px-5 pt-2;
@@ -74,3 +104,8 @@
 .studentStars {
   @apply mt-3;
 }
+.diagramContainer {
+  @apply flex justify-center;
+  margin: 0 auto; 
+}
+
