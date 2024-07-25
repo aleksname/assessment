@@ -1,0 +1,76 @@
+/* styles.module.scss */
+.wrapper {
+  @apply text-black px-5 pt-2;
+  margin: 0 auto;
+  background-image: url('../../public/BackgrounMainPage.png');
+  background-size: 100%;
+  background-repeat: no-repeat
+}
+
+.startScreen {
+  @apply text-black px-5 pt-2;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.title {
+  @apply text-5xl font-bold mb-1 text-green-400 flex justify-center;
+}
+
+.topicBlockItem {
+  @apply pb-2;
+}
+
+.topicItemIcon {
+  @apply flex text-2xl font-bold items-center p-4 bg-green-300 mb-5 rounded-2xl drop-shadow-2xl shadow-xl;
+  background-image: url('../../public/noise_transparent.png');
+  justify-content: space-between;
+}
+
+.topicIconbloks {
+  @apply flex items-center;
+}
+
+.topicText {
+  @apply mr-5;
+}
+
+.topicImg {
+  width: 80px;
+  height: 70px;
+}
+
+.topicItemUser {
+  @apply flex justify-center;
+}
+
+.topicUserText {
+  margin-right: 5px;
+  @apply bg-pink-400 p-3 rounded-xl text-xl items-center;
+  background-image: url('../../public/noise_transparent.png');
+}
+
+.topicUserText:first-of-type {
+}
+
+.topicUserText:last-of-type {
+  margin-right: 0;
+}
+
+.rationBlock {
+  @apply mx-auto pb-10 ;
+  max-width: 1280px;
+  text-align: center;
+}
+
+.calculateButton {
+  @apply mt-5 bg-blue-500 text-white py-2 px-4 rounded;
+}
+
+.totalStars {
+  @apply mt-3 text-2xl font-bold;
+}
+
+.studentStars {
+  @apply mt-3;
+}
