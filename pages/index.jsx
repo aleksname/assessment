@@ -4,7 +4,7 @@ import icon1 from '../public/calculation.png';
 import icon2 from '../public/abacus.png';
 import icon3 from '../public/calculator2.png';
 import icon4 from '../public/blackboard.png';
-import TopicItem from './StatisticsPage/TopicItem';
+import TopicItem from '../pages/TopicItem';
 
 const students = ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'];
 
