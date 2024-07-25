@@ -9,7 +9,8 @@ export default function TopicItem({ children, childrenIcon, students }) {
         <p className={styles.topicText}>{children}</p>
         <Image src={childrenIcon} alt={childrenIcon} className={styles.topicImg} />
       </div>
-      <TopicUser students={students} />
+      <TopicUser students={students || []} />
+
     </div>
   );
 }
