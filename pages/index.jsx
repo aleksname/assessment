@@ -8,10 +8,15 @@ import TopicItem from '../pages/TopicItem';
 import MainContainer from './MainContainer';
 import Diagrama from './Diagrama';
 
-const students = ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'  ];
+const groups = {
+  group1: ['Алан', 'Артем', 'Аміна','Вєлат', 'Софія'],
+  group2: ['Максим','Устим', 'Денис', 'Саша', "Степан"]
+};
 const maxStarsPerStudent = 20; // Define the maximum stars a student can collect
 
 export default function Main() {
+  const [selectedGroup, setSelectedGroup] = useState('group1');
+  const students = groups[selectedGroup];
   const [totalStars, setTotalStars] = useState(0);
   const [studentStars, setStudentStars] = useState(
     students.reduce((acc, student) => ({ ...acc, [student]: 0 }), {})
@@ -43,6 +48,16 @@ export default function Main() {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Успішність на уроці</h1>
         <div className={styles.startScreen}>
+        <div>
+          <label htmlFor="group-select">Виберіть групу:</label>
+          <select id="group-select" onChange={(e) => setSelectedGroup(e.target.value)}>
+            {Object.keys(groups).map(group => (
+              <option key={group} value={group}>
+                {group}
+              </option>
+            ))}
+          </select>
+        </div>
           <div className={styles.topicBlockItem}>
             <TopicItem children={"Активна участь"} childrenIcon={icon1} className='bg-green-400' students={students} />
             <TopicItem children={"Уважність та зосередженість"} childrenIcon={icon2} className='bg-red-400' students={students} />
@@ -61,15 +76,6 @@ export default function Main() {
             Загальна кількість зірочок: {totalStars}
             <Diagrama data={studentPercentages} className/>
           </div>
-          {/*<div className={styles.studentStars}>
-              {students.map(student => (
-                <div key={student}>
-                  {student}: {studentStars[student]}
-                </div>
-              ))}
-          </div>
-            ))}
-          </div> */}
         </div>  
       </div>
     </MainContainer>
