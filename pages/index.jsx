@@ -5,6 +5,7 @@ import icon2 from '../public/abacus.png';
 import icon3 from '../public/calculator2.png';
 import icon4 from '../public/blackboard.png';
 import TopicItem from '../pages/TopicItem';
+import MainContainer from './MainContainer';
 
 const students = ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'];
 
@@ -31,33 +32,35 @@ export default function Main() {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.title}>Успішність на уроці</h1>
-      <div className={styles.startScreen}>
-        <div className={styles.topicBlockItem}>
-          <TopicItem children={"Активна участь"} childrenIcon={icon1} className='bg-green-400' students={students} />
-          <TopicItem children={"Уважність та зосередженість"} childrenIcon={icon2} className='bg-red-400' students={students} />
-          <TopicItem children={"Робота з кодом"} childrenIcon={icon3} students={students} />
-          <TopicItem children={"Робота з кахутом"} childrenIcon={icon4} students={students} />
+    <MainContainer titels={"Progress page"}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Успішність на уроці</h1>
+        <div className={styles.startScreen}>
+          <div className={styles.topicBlockItem}>
+            <TopicItem children={"Активна участь"} childrenIcon={icon1} className='bg-green-400' students={students} />
+            <TopicItem children={"Уважність та зосередженість"} childrenIcon={icon2} className='bg-red-400' students={students} />
+            <TopicItem children={"Робота з кодом"} childrenIcon={icon3} students={students} />
+            <TopicItem children={"Робота з кахутом"} childrenIcon={icon4} students={students} />
+          </div>
+          <div className={styles.startAsideBlock}>
+          </div>
         </div>
-        <div className={styles.startAsideBlock}>
+        <div className={styles.rationBlock}>
+          <button onClick={handleCalculateStars} className={styles.calculateButton}>
+            Обрахувати зірочки
+          </button>
+          <div className={styles.totalStars}>
+            Загальна кількість зірочок: {totalStars}
+          </div>
+          <div className={styles.studentStars}>
+            {students.map(student => (
+              <div key={student}>
+                {student}: {studentStars[student]}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className={styles.rationBlock}>
-        <button onClick={handleCalculateStars} className={styles.calculateButton}>
-          Обрахувати зірочки
-        </button>
-        <div className={styles.totalStars}>
-          Загальна кількість зірочок: {totalStars}
-        </div>
-        <div className={styles.studentStars}>
-          {students.map(student => (
-            <div key={student}>
-              {student}: {studentStars[student]}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </MainContainer>
   );
 }
