@@ -39,9 +39,9 @@ export default function Main() {
   };
 
   const studentPercentages = students.reduce((acc, student) => {
-    const percentage = (studentStars[student] / maxStarsPerStudent) * 100;
-    return { ...acc, [student]: percentage };
-  }, {});
+  const percentage = (studentStars[student] / maxStarsPerStudent) * 100;
+  return { ...acc, [student]: percentage };
+}, {});
 
   return (
     <MainContainer titels={"Progress page"}>
