@@ -3,7 +3,7 @@ import MainContainer from './MainContainer'
 
 export default function user() {
   return (
-    <MainContainer>
+    <MainContainer titels={'My profile'}>
       <div className="">as</div>
     </MainContainer >    
   )

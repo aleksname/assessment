@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Select Stars",
+        "group": "MINE-66",
+        "name": "Alan",
+        "gender": "male",
+        "rating": 8
+    },
+    {
+        "title": "Select Stars",
+        "group": "MINE-66",
+        "name": "Velat",
+        "gender": "male",
+        "rating": 8
+    },
+    {
+        "title": "Select Stars",
+        "group": "MINE-66",
+        "name": "Amina",
+        "gender": "famale",
+        "rating": 8
+    },
+    {
+        "title": "Select Stars",
+        "group": "MINE-66",
+        "name": "Artem",
+        "gender": "male",
+        "rating": 8
+    },
+    {
+        "title": "Select Stars",
+        "group": "MINE-66",
+        "name": "Sofia",
+        "gender": "famale",
+        "rating": 8
+    }
+]

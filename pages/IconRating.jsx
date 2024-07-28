@@ -6,7 +6,6 @@ export default function IconRating({ student }) {
   const [value, setValue] = React.useState(2);
 
   return (
-    
     <Box 
       sx={{
         '& > legend': { mt: 2 },
