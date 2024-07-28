@@ -1,6 +1,7 @@
 // app.jsx
-import './styles/global.css';  // Додаємо глобальні стилі
-import './styles/styles.module.scss'; // Імпорт ваших модульних стилів
+import './styles/global.css';  
+import './styles/styles.module.scss'; 
+import './styles/stylesGames.module.scss'
 
 export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

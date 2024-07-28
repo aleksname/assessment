@@ -11,7 +11,7 @@
 .headerBlock {
  .headerBlock {
   max-width: 1280px;
-  @apply items-center mx-auto flex justify-between p-6 text-xl drop-shadow-xl shadow-xl
+  @apply items-center mx-auto flex justify-between p-6 text-xl drop-shadow-xl 
 } 
 }
 .header{
@@ -109,3 +109,46 @@
   margin: 0 auto; 
 }
 
+
+// -------games page------
+.wrapperGames{
+    @apply text-black px-5 pt-2;
+    margin: 0 auto;
+    background-image: url('../../public/gamesPage/bgGamesPage.png');
+    background-size: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+.gamesTitleBlock{
+  @apply flex items-center justify-center bg-slate-100 p-5 mb-32 rounded-lg
+}
+.gamesText{
+  @apply pr-3
+}
+.gamesTextSpan{
+  @apply font-bold
+}
+.gamesTextIcon{
+  width: 56px;
+  height: 56px;
+}
+
+.gamesAnogramBlock{
+  @apply bg-slate-100 rounded-lg p-5 mb-32
+}
+.anogramWorld{
+  @apply mb-3 border-b-4 items-center flex justify-center px-4
+}
+.anogrgamTitle{
+  @apply font-bold text-3xl flex justify-center mb-4
+}
+
+.anogramActiveBlock{
+  @apply font-bold text-xl flex justify-around
+}
+.anogramaEl{
+  @apply border-4 flex justify-center px-4 py-2 mb-2 rounded-lg;
+  
+  @apply focus:outline-none
+}

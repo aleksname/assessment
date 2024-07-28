@@ -16,7 +16,7 @@ export default function () {
                     <ul className={styles.headerUl}>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/">Home</a></li>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/">Progress</a></li>
-                        <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/">Games</a></li>
+                        <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/games">Games</a></li>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/user">My Profile</a></li>
                     </ul>
                 </nav>
