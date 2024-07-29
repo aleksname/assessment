@@ -34,7 +34,9 @@ export default function Main() {
       const student = rating.getAttribute('data-student');
       individualStars[student] += value;
     });
-
+    //
+   
+    // 
     setTotalStars(stars);
     setStudentStars(individualStars);
 
@@ -48,6 +50,21 @@ export default function Main() {
     } catch (error) {
       console.error('Error saving stars:', error);
     }
+
+     try {
+    const повідомлення = `Добрий вечір! Ми завершили наш урок і ось наші успіхи:\n`;
+    const успіхиУчнів = Object.entries(studentStars).map(([учень, зірочки]) => {
+      return `${учень} - ${зірочки} зірочок`;
+    }).join('\n');
+
+    await axios.post(`https://api.telegram.org/bot7330464042:AAHK8dljTfDKEYmvBuHEnImFX463DYsQGWY/sendMessage`, {
+      chat_id: `<1317980286>`,
+      text: повідомлення + успіхиУчнів,
+    });
+    alert('Зірочки успішно збережено та повідомлення відправлено в Telegram!');
+  } catch (error) {
+    console.error('Помилка при відправці повідомлення в Telegram:', error);
+  }
   };
 
   const studentPercentages = students.reduce((acc, student) => {
