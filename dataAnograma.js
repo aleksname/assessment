@@ -1,14 +1,14 @@
 export const dataAnograma = [
-    {id: 1, word: 'Вчитель '},
-    {id: 2, word: 'Машина '},
-    {id: 3, word: 'Соняшник '},
-    {id: 4, word: 'Павук '},
-    {id: 5, word: 'Картопля '},
-    {id: 6, word: 'Корабель '},
-    {id: 7, word: 'Бібліотека '},
-    {id: 8, word: 'Чарівник '},
-    {id: 9, word: 'Повідомлення '},
-    {id: 10, word: 'Сонячний '},
+    {id: 1, word: 'витлельч '},
+    {id: 2, word: 'шинама '},
+    {id: 3, word: 'шисонкня '},
+    {id: 4, word: 'купав '},
+    {id: 5, word: 'плоаркта '},
+    {id: 6, word: 'лебарок '},
+    {id: 7, word: 'такбіелоб '},
+    {id: 8, word: 'вікаринч '},
+    {id: 9, word: 'омвідомленпя '},
+    {id: 10, word: 'чніняосй '},
 ]
 
 // const secondEl = dataAnograma[1]
