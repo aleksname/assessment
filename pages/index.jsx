@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import styles from './styles/styles.module.scss';
 import icon1 from '../public/calculation.png';
 import icon2 from '../public/abacus.png';
@@ -8,6 +7,7 @@ import icon4 from '../public/blackboard.png';
 import TopicItem from '../pages/TopicItem';
 import MainContainer from './MainContainer';
 import Diagrama from './Diagrama';
+import TestSub from './testSub';
 
 const groups = {
   group1: ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'],
@@ -34,37 +34,8 @@ export default function Main() {
       const student = rating.getAttribute('data-student');
       individualStars[student] += value;
     });
-    //
-   
-    // 
     setTotalStars(stars);
     setStudentStars(individualStars);
-
-    try {
-      await axios.post('http://localhost:5000/api/stars', {
-        date: new Date().toISOString(),
-        group: selectedGroup,
-        stars: individualStars
-      });
-      alert('Зірочки успішно збережено!');
-    } catch (error) {
-      console.error('Error saving stars:', error);
-    }
-
-     try {
-    const повідомлення = `Добрий вечір! Ми завершили наш урок і ось наші успіхи:\n`;
-    const успіхиУчнів = Object.entries(studentStars).map(([учень, зірочки]) => {
-      return `${учень} - ${зірочки} зірочок`;
-    }).join('\n');
-
-    await axios.post(`https://api.telegram.org/bot7330464042:AAHK8dljTfDKEYmvBuHEnImFX463DYsQGWY/sendMessage`, {
-      chat_id: `<1317980286>`,
-      text: повідомлення + успіхиУчнів,
-    });
-    alert('Зірочки успішно збережено та повідомлення відправлено в Telegram!');
-  } catch (error) {
-    console.error('Помилка при відправці повідомлення в Telegram:', error);
-  }
   };
 
   const studentPercentages = students.reduce((acc, student) => {
@@ -74,6 +45,7 @@ export default function Main() {
 
   return (
     <MainContainer titels={"Progress page"}>
+      <TestSub/>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Успішність на уроці</h1>
         <div className={styles.startScreen}>
