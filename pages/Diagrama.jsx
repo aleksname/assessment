@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
-import styles from './styles/styles.module.scss'; // Переконайтесь, що шлях правильний
+import styles from './styles/styles.module.scss';
 
 export default function Diagrama({ data }) {
   if (!data) {
