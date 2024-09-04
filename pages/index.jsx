@@ -9,11 +9,11 @@ import MainContainer from './MainContainer';
 import Diagrama from './Diagrama';
 import { firestore } from '../firebase';
 import { addDoc, collection } from 'firebase/firestore';
-import MessageForm from './testSub';
 
 const groups = {
   group1: ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'],
-  group2: ['Максим', 'Устим', 'Денис', 'Саша', 'Степан']
+  group2: ['Максим', 'Устим', 'Денис', 'Саша', 'Степан', 'Даша', 'Марко'],
+  group3: ['Тимофій']
 };
 const maxStarsPerStudent = 20;
 
@@ -50,6 +50,14 @@ export default function Main() {
         data,
         timestamp: new Date()
       });
+
+      // Відправлення даних на інший вебсайт
+      // await axios.post('https://сайт.com/api/data', {
+      //   group: selectedGroup,
+      //   data,
+      //   timestamp: new Date()
+      // });
+
     } catch (error) {
       console.error('Error adding document: ', error);
     }

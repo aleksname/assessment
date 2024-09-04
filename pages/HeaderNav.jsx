@@ -14,7 +14,7 @@ export default function () {
                 </div>
                 <nav>
                     <ul className={styles.headerUl}>
-                        <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/">Home</a></li>
+                        <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/home">Home</a></li>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/">Progress</a></li>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/games">Games</a></li>
                         <li className={styles.headerLinkLi}><a className={styles.headerLink} href="/user">My Profile</a></li>
