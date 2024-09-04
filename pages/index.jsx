@@ -7,11 +7,13 @@ import icon4 from '../public/blackboard.png';
 import TopicItem from '../pages/TopicItem';
 import MainContainer from './MainContainer';
 import Diagrama from './Diagrama';
-import TestSub from './testSub';
+import { firestore } from '../firebase';
+import { addDoc, collection } from 'firebase/firestore';
 
 const groups = {
   group1: ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'],
-  group2: ['Максим', 'Устим', 'Денис', 'Саша', "Степан"]
+  group2: ['Максим', 'Устим', 'Денис', 'Саша', 'Степан', 'Даша', 'Марко'],
+  group3: ['Тимофій']
 };
 const maxStarsPerStudent = 20;
 
@@ -36,6 +38,29 @@ export default function Main() {
     });
     setTotalStars(stars);
     setStudentStars(individualStars);
+
+    const data = students.map(student => ({
+      name: student,
+      stars: individualStars[student]
+    }));
+
+    try {
+      await addDoc(collection(firestore, 'studentStars'), {
+        group: selectedGroup,
+        data,
+        timestamp: new Date()
+      });
+
+      // Відправлення даних на інший вебсайт
+      // await axios.post('https://сайт.com/api/data', {
+      //   group: selectedGroup,
+      //   data,
+      //   timestamp: new Date()
+      // });
+
+    } catch (error) {
+      console.error('Error adding document: ', error);
+    }
   };
 
   const studentPercentages = students.reduce((acc, student) => {
@@ -45,7 +70,6 @@ export default function Main() {
 
   return (
     <MainContainer titels={"Progress page"}>
-      <TestSub/>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Успішність на уроці</h1>
         <div className={styles.startScreen}>
@@ -74,9 +98,9 @@ export default function Main() {
           </button>
           <div className={styles.totalStars}>
             Загальна кількість зірочок: {totalStars}
-            <Diagrama data={studentPercentages} className />
+            <Diagrama data={studentPercentages} />
           </div>
-        </div>  
+        </div>
       </div>
     </MainContainer>
   );

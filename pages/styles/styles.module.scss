@@ -39,7 +39,7 @@
 
 .startScreen {
   @apply text-black px-5 pt-2;
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -151,4 +151,22 @@
   @apply border-4 flex justify-center px-4 py-2 mb-2 rounded-lg;
   
   @apply focus:outline-none
+}
+// ---kahootLinkBlock------
+.kahootLinkBlock{
+  width: 1230px;
+  @apply mx-auto
+}
+.kahootInputBlock,
+.kahootButtonblock{
+  @apply flex justify-center 
+}
+.kahootInput{
+  @apply px-10 py-3 mt-40 mb-5 rounded-lg 
+}
+.kahootInput::placeholder{
+  @apply text-gray-800 font-mono
+}
+.kahootButton{
+  @apply mb-40 px-20 py-3 bg-green-400 rounded-lg
 }
