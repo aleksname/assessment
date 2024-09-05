@@ -12,7 +12,7 @@ import { addDoc, collection } from 'firebase/firestore';
 
 const groups = {
   group1: ['Алан', 'Артем', 'Аміна', 'Вєлат', 'Софія'],
-  group2: ['Максим', 'Устим', 'Денис', 'Саша', 'Степан', 'Даша', 'Марко'],
+  group2: ['Максим', 'Устим', 'Денис', 'Саша', 'Степан', 'Марко'],
   group3: ['Тимофій']
 };
 const maxStarsPerStudent = 20;
